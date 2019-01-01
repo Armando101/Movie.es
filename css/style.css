@@ -6,12 +6,17 @@ body {
 /* Barra de navegacion */
 
 .menu-container {
+  position: fixed;
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
   display: grid;
   align-items: center;
   padding: 2px 25px;
   grid-template-areas: "Logo Buscador Avatar";
+  background: white;
+  width: 100vw;
+  z-index: 2;
 }
+
 
 .menu-ham {
   position: fixed;
@@ -112,10 +117,54 @@ body {
   margin-left: 5px;
 }
 
+.principal {
+}
+
+.barra-vertical {
+  position: absolute;
+  position: fixed;
+  background: rgb(255, 20, 0);
+  width: 70px;
+  height: 100vh;
+  display: flex;
+  top: 76px;
+  z-index: 3;
+}
+
+.home {
+  /* padding-left: 85px;
+  padding-right: 85px; */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 293px));
+  justify-content: center;
+  grid-gap: 28px;
+}
+
+.post {
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.post-image {
+  margin: 0;
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  vertical-align: top;
+  height: 100%;
+}
+
 
 @media screen and (max-width:1024px) {
   .menu-container {
     grid-column-gap: 17px;
+  }
+  .home {
+    padding-left: 95px;
+    padding-right: 25px;
   }
 
 }
@@ -132,7 +181,11 @@ body {
     grid-template-areas: "Logo Avatar"
                          "Buscador Buscador";
   justify-content: space-between;
+
+  padding-bottom: 20px;
+
   }
+
 
 }
 @media screen and (max-width: 525px) {
@@ -172,6 +225,10 @@ body {
 
   .hamburger {
     display: block;
+  }
+
+  .barra-vertical {
+    display: none;
   }
 
 }
