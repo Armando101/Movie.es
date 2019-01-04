@@ -5,6 +5,45 @@ body {
 
 /* Barra de navegacion */
 
+.categoria1 {
+  display: block;
+  margin-left: 96px;
+  color: #3F546C;
+}
+
+.post-overlay {
+  background: rgba(255, 0, 0, 0.75);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding-left: 15px;
+}
+
+.post:hover .post-overlay {
+  display: block;
+}
+
+.Info-peli h4{
+  font-size: 30px;
+}
+
+.Info-peli p {
+  position: absolute;
+  top: 50px;
+  font-size: 15px;
+}
+
+.Info-peli {
+  position: relative;
+  top: -20px;
+}
+
 .menu-container {
   position: fixed;
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
@@ -15,6 +54,7 @@ body {
   background: white;
   width: 100vw;
   z-index: 2;
+  /* justify-content: space-between; */
 }
 
 
@@ -90,7 +130,7 @@ body {
   border-radius: 5px;
   width: 350px;
   text-align: center;
-  padding-left: 5px;
+  padding-left: 15px;
   background-image: url('../img/search.png');
   background-repeat: no-repeat;
   background-size: 14px;
@@ -157,14 +197,102 @@ body {
   height: 100%;
 }
 
+.footer {
+  margin-top: 85px;
+  padding: 0 20px;
+  /* width: 100vw; */
+  /* background-color: #fafafa; */
+  /* justify-content: center; */
+}
+
+.footer.container {
+  display: flex;
+  justify-content: center;
+  height: 104px;
+  margin-bottom: 0;
+  padding: 38px 0;
+  align-items: center;
+}
+
+.footer.container ul {
+  list-style: none;
+  display: flex;
+}
+
+.footer.container ul li {
+  margin-right: 20px;
+  font-size: 12px;
+  font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  color: #003569;
+  text-decoration: none;
+}
+.footer.container ul li a {
+  color: #003569;
+  text-decoration: none;
+}
+
+.designed {
+  color: #999;
+  padding: 14px;
+  font-size: 13px;
+}
+
 
 @media screen and (max-width:1024px) {
+  /* body {
+    background: cyan;
+  } */
+
+  .Info-peli p {
+    top: 30px;
+  }
+
   .menu-container {
     grid-column-gap: 17px;
   }
   .home {
     padding-left: 95px;
     padding-right: 25px;
+  }
+
+  .footer {
+    margin-top: 85px;
+    height: 104px;
+  }
+
+  .footer.container {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+  }
+
+
+  .footer.container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .footer.container ul li {
+    font-size: 11px;
+  }
+
+}
+@media screen and (max-width:894px) {
+  .search input {
+    width: 230px;
+    background-image: none;
+  }
+
+  .Info-peli h4{
+    font-size: 20px;
+  }
+
+  .Info-peli p {
+    top: 20px;
+    font-size: 12px;
   }
 
 }
@@ -174,9 +302,34 @@ body {
     background-image: none;
   }
 
+  /* body {
+    background: green;
+  } */
+
+  .footer.container {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    position: relative;
+  }
+
+
+  .footer.container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .footer.container ul li {
+    font-size: 15px;
+  }
+
+
+
   .menu-container {
     display: grid;
-    grid-template-columns: 180px minmax(80, 280);
+    grid-template-columns: 180px minmax(80px, 280px);
     /* grid-template-rows: 80px 80px; */
     grid-template-areas: "Logo Avatar"
                          "Buscador Buscador";
@@ -186,9 +339,24 @@ body {
 
   }
 
+  .barra-vertical {
+    top: 119px;
+  }
+  .post:hover .post-overlay {
+    display: none;
+  }
 
 }
 @media screen and (max-width: 525px) {
+
+  .barra-vertical {
+    top: 106px;
+  }
+
+  /* body {
+    background: yellow;
+  } */
+
   .logo {
     align-items: center;
 
@@ -206,9 +374,17 @@ body {
     font-size: 12px;
   }
 
+  .designed {
+    position: absolute;
+    top: 105px;
+  }
 }
 
 @media screen and (max-width: 355px) {
+  /* body {
+    background: black;
+  } */
+
   .menu-container {
     grid-template-columns: 10px 10px;
     grid-template-areas: "Logo Logo"
